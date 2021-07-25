@@ -14,10 +14,4 @@ new Vue({
   router,
   render: h => h(App)
 }).$mount("#app")
-// new Vue({
-//   el: '#app',
-//   router,
-//   components: { App },
-//   template: '<App/>'
-// })
 

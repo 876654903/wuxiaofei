@@ -6,32 +6,22 @@
     <div class="footer">
       <div class="footer-main">
         <div class="home">
-          <!-- <router-link to="/home" tag="li">
+          <router-link to="/home" tag="li">
             <div class="icon"><i class="el-icon-s-home"></i></div>
             <div class="text">首页</div>
-          </router-link> -->
-          <router-link to="/home" custom v-slot="{ navigate }">
-            <div @click="navigate" @keypress.enter="navigate" role="link">
-              <div class="icon"><i class="el-icon-s-home"></i></div>
-              <div class="text">首页</div>
-            </div>
           </router-link>
         </div>
         <div class="find">
-          <router-link to="/find" custom v-slot="{ navigate }">
-            <div @click="navigate" @keypress.enter="navigate" role="link">
-              <div class="icon"><i class="el-icon-position"></i></div>
-              <div class="text">发现</div>
-            </div>
+          <router-link to="/find" tag="li">
+            <div class="icon"><i class="el-icon-position"></i></div>
+            <div class="text">发现</div>
           </router-link>
         </div>
         <!-- 跳转到我的路由的时候需要判断是否登陆，做登陆验证，改验证是通过路由做判断（app.js create生命周期里） -->
         <div class="user">
-          <router-link to="/user" custom v-slot="{ navigate }">
-            <div @click="navigate" @keypress.enter="navigate" role="link">
-              <div class="icon"><i class="el-icon-delete"></i></div>
-              <div class="text">我的</div>
-            </div>
+          <router-link to="/user" tag="li">
+            <div class="icon"><i class="el-icon-delete"></i></div>
+            <div class="text">我的</div>
           </router-link>
         </div>
       </div>
@@ -78,7 +68,7 @@ export default {};
           margin-top: 5px;
         }
         // &代表当前元素 也就是.home或.find或 .user  >代表当前元素下的最近的子元素只能是子元素  不加>代表可以选到子孙元素
-        &:hover > div .icon {
+        &:hover > li .icon {
           color: var(--primary-color);
         }
       }

@@ -4,31 +4,38 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 //第三方库需要use一下才能用
 Vue.use(VueRouter)
+//引用page1页面
+import login from '@/pages/login';
+//引用page2页面
+import main from './pages/main';
+import home from './pages/main/components/home'
+import user from './pages/main/components/user'
+import find from './pages/main/components/find'
 
 //定义routes路由的集合，数组类型
 const routes = [
   // 登陆页
   {
     path: '/login',
-    component: () => import('@/pages/login'),
+    component: login
   },
   {
     // 主页
     path: '/',
-    component: () => import('@/pages/main'),
+    component: main,
     // 二级页面
     children: [
       {
         path: 'home',
-        component: () => import('@/pages/home'),
+        component: home
       },
       {
         path: 'find',
-        component: () => import('@/pages/find'),
+        component: find
       },
       {
         path: 'user',
-        component: () => import('@/pages/user'),
+        component: user,
         meta: { requireAuth: true },
       }
     ]
